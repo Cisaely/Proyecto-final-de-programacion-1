@@ -1,0 +1,164 @@
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\appsettings.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\NexBusiness.staticwebassets.endpoints.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\NexBusiness.exe
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\NexBusiness.deps.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\NexBusiness.runtimeconfig.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\NexBusiness.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\NexBusiness.pdb
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\BCrypt.Net-Next.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.Data.Sqlite.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\SQLitePCLRaw.core.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-musl-riscv64\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-riscv64\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.AssemblyInfoInputs.cache
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.AssemblyInfo.cs
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\scopedcss\bundle\NexBusiness.styles.css
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusin.787E782E.Up2Date
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\refint\NexBusiness.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.pdb
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\NexBusiness.genruntimeconfig.cache
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\ref\NexBusiness.dll
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\bin\Debug\net10.0\NexBusiness.staticwebassets.runtime.json
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\6uca93bhs0-{0}-almrsvkbsg-almrsvkbsg.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\gy0ujfoq5q-{0}-9vj878w595-9vj878w595.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\c3i1g44e7v-{0}-cteb1uxfl1-cteb1uxfl1.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\3bag4rh322-{0}-0yzx8hg40l-0yzx8hg40l.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\kgunf280f6-{0}-2tw7qow5ea-2tw7qow5ea.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\wp342h6jxl-{0}-yhynyot40h-yhynyot40h.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\2qbo7wdtup-{0}-wmaprkda4p-wmaprkda4p.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\1rpub37u6c-{0}-quscimt3r8-quscimt3r8.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\2z7lgc0l6d-{0}-2cediw65xm-2cediw65xm.gz
+C:\Users\Administrator\Downloads\prueba-main\prueba-main\backend\obj\Debug\net10.0\compressed\vrbkctnocv-{0}-tnarnf0ozs-tnarnf0ozs.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.csproj.AssemblyReference.cache
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.AssemblyInfoInputs.cache
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.AssemblyInfo.cs
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.csproj.CoreCompileInputs.cache
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\refint\NexBusiness.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.pdb
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\appsettings.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\NexBusiness.staticwebassets.runtime.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\NexBusiness.staticwebassets.endpoints.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\NexBusiness.exe
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\NexBusiness.deps.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\NexBusiness.runtimeconfig.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\NexBusiness.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\NexBusiness.pdb
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\BCrypt.Net-Next.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.Data.Sqlite.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\SQLitePCLRaw.batteries_v2.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\SQLitePCLRaw.core.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-musl-riscv64\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-riscv64\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\scopedcss\bundle\NexBusiness.styles.css
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\6uca93bhs0-{0}-almrsvkbsg-almrsvkbsg.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\wp342h6jxl-{0}-yhynyot40h-yhynyot40h.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\1rpub37u6c-{0}-quscimt3r8-quscimt3r8.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\2qbo7wdtup-{0}-wmaprkda4p-wmaprkda4p.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\2z7lgc0l6d-{0}-2cediw65xm-2cediw65xm.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\gy0ujfoq5q-{0}-9vj878w595-9vj878w595.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\vrbkctnocv-{0}-tnarnf0ozs-tnarnf0ozs.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\c3i1g44e7v-{0}-cteb1uxfl1-cteb1uxfl1.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\kgunf280f6-{0}-2tw7qow5ea-2tw7qow5ea.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\compressed\3bag4rh322-{0}-0yzx8hg40l-0yzx8hg40l.gz
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusin.787E782E.Up2Date
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\NexBusiness.genruntimeconfig.cache
+C:\Users\carme\Downloads\Poryectocasifinal-main (1)\Poryectocasifinal-main\backend\obj\Debug\net10.0\ref\NexBusiness.dll

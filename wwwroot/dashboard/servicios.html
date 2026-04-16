@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mis Servicios — NexBusiness</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </div>
+      <span>NexBusiness</span>
+    </div>
+
+    <div class="sidebar-user" style="margin: 1rem; background: rgba(255,255,255,0.05);">
+      <div class="sidebar-avatar" id="sidebar-avatar">U</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name" id="sidebar-name">Usuario</div>
+        <div class="sidebar-user-role" id="sidebar-role">Dueño de Negocio</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label">Gestión</div>
+    <nav class="sidebar-nav">
+      <a href="/dashboard/index.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Inicio
+      </a>
+      <a href="/dashboard/mis-negocios.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Mis Negocios
+      </a>
+      <a href="/dashboard/servicios.html" class="sidebar-item active">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Servicios / Productos
+      </a>
+      <a href="/dashboard/perfil.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        Mi Perfil
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button onclick="logout()" class="sidebar-item" style="width: 100%; text-align: left; background: none; border: none;">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        Cerrar Sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <header class="mobile-topbar">
+      <div class="font-bold">NexBusiness</div>
+      <button id="btn-open-sidebar" class="btn-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </header>
+    
+    <header class="topbar">
+      <h2 class="topbar-title">Gestión de Servicios</h2>
+      <div class="topbar-actions">
+        <button class="btn btn-primary" onclick="openModalServicio()">Crear Servicio</button>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <div class="page-header">
+        <h1>Catálogo de Productos y Servicios</h1>
+        <p>Añade y gestiona lo que ofreces. La IA utilizará esta información para responder preguntas de los clientes.</p>
+      </div>
+
+      <div class="form-group" style="max-width:300px;">
+        <label>Selecciona un Negocio para ver sus servicios</label>
+        <select id="select-negocio" class="form-control" onchange="loadServicios()"></select>
+      </div>
+
+      <div class="card">
+        <div class="table-container">
+          <table id="table-servicios">
+            <thead>
+              <tr>
+                <th>Nombre del Servicio/Producto</th>
+                <th>Descripción</th>
+                <th>Precio referencial</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align:center;">Selecciona un negocio para ver sus servicios.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL SERVICIO -->
+<div class="modal-overlay" id="modal-servicio" style="display:none;">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 id="modal-title">Registrar Servicio</h3>
+      <button class="btn-icon" onclick="closeModal('modal-servicio')">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="formServicio">
+        <input type="hidden" id="s-id">
+        <div class="form-group">
+          <label>Negocio asocidado</label>
+          <!-- Se preselecciona con el valor activo -->
+          <input type="text" id="s-negocio-text" class="form-control" disabled>
+        </div>
+        <div class="form-group">
+          <label>Nombre del Servicio / Producto *</label>
+          <input type="text" id="s-nombre" class="form-control" required placeholder="Ej. Corte de Cabello">
+        </div>
+        <div class="form-group">
+          <label>Descripción</label>
+          <textarea id="s-descripcion" class="form-control" rows="2" placeholder="Incluye lavado, secado..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Precio</label>
+          <input type="text" id="s-precio" class="form-control" placeholder="Ej. $15.00 o 'A cotizar'">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-servicio')">Cancelar</button>
+      <button class="btn btn-primary" id="btn-save" onclick="guardarServicio()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (requireAuth()) {
+    let currentNegocios = [];
+    let currentServicios = [];
+
+    async function initPage() {
+      try {
+        currentNegocios = await apiFetch('/negocios/mis-negocios');
+        const sel = document.getElementById('select-negocio');
+        
+        if(currentNegocios.length === 0) {
+          sel.innerHTML = `<option value="">No tienes negocios creados</option>`;
+          return;
+        }
+
+        sel.innerHTML = currentNegocios.map(n => `<option value="${n.id}">${n.nombre}</option>`).join('');
+        loadServicios(); // Cargar los del primero
+      } catch(e) { console.error(e); }
+    }
+
+    async function loadServicios() {
+      const nid = document.getElementById('select-negocio').value;
+      const tbody = document.querySelector('#table-servicios tbody');
+      if(!nid) return;
+
+      try {
+        currentServicios = await apiFetch(`/servicios/${nid}`);
+        if(currentServicios.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">No has registrado servicios para este negocio.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = currentServicios.map(s => `
+          <tr>
+            <td><strong>${s.nombre}</strong></td>
+            <td>${s.descripcion || '-'}</td>
+            <td><span class="badge badge-success">${s.precio || 'N/A'}</span></td>
+            <td>
+              <button class="btn btn-sm btn-outline text-dark" onclick="editar(${s.id})" style="margin-bottom:0; width:auto; border:1px solid #ddd">Editar</button>
+              <button class="btn btn-sm text-danger" onclick="eliminar(${s.id})" style="margin-bottom:0; width:auto; background:none; border:none; padding: 0.5rem;">Borrar</button>
+            </td>
+          </tr>
+        `).join('');
+
+      } catch(err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    window.openModalServicio = function() {
+      const nid = document.getElementById('select-negocio').value;
+      if(!nid) return showToast('Selecciona o crea un negocio primero.', 'error');
+      
+      document.getElementById('formServicio').reset();
+      document.getElementById('s-id').value = '';
+      document.getElementById('s-negocio-text').value = currentNegocios.find(n=>n.id == nid).nombre;
+      document.getElementById('modal-title').textContent = 'Registrar Servicio';
+      openModal('modal-servicio');
+    };
+
+    window.editar = function(id) {
+      const s = currentServicios.find(x => x.id === id);
+      if(!s) return;
+
+      const nid = document.getElementById('select-negocio').value;
+      document.getElementById('s-negocio-text').value = currentNegocios.find(n=>n.id == nid).nombre;
+
+      document.getElementById('s-id').value = s.id;
+      document.getElementById('s-nombre').value = s.nombre;
+      document.getElementById('s-descripcion').value = s.descripcion;
+      document.getElementById('s-precio').value = s.precio;
+      
+      document.getElementById('modal-title').textContent = 'Editar Servicio';
+      openModal('modal-servicio');
+    };
+
+    window.guardarServicio = async function() {
+      const nid = document.getElementById('select-negocio').value;
+      const id = document.getElementById('s-id').value;
+      const btn = document.getElementById('btn-save');
+      
+      const payload = {
+        negocioId: parseInt(nid),
+        nombre: document.getElementById('s-nombre').value,
+        descripcion: document.getElementById('s-descripcion').value,
+        precio: document.getElementById('s-precio').value
+      };
+
+      if (!payload.nombre) return showToast('Nombre requerido', 'error');
+
+      try {
+        btn.disabled = true;
+        btn.textContent = 'Guardando...';
+
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `/servicios/${id}` : '/servicios';
+
+        await apiFetch(url, { method, body: JSON.stringify(payload) });
+
+        showToast(id ? 'Actualizado' : 'Creado con éxito', 'success');
+        closeModal('modal-servicio');
+        loadServicios();
+      } catch (err) {
+        showToast(err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Guardar';
+      }
+    };
+
+    window.eliminar = async function(id) {
+      if(!confirm('¿Eliminar servicio?')) return;
+      try {
+        await apiFetch(`/servicios/${id}`, { method: 'DELETE' });
+        showToast('Eliminado', 'success');
+        loadServicios();
+      } catch (err) { }
+    }
+
+    window.addEventListener('load', initPage);
+  }
+</script>
+</body>
+</html>

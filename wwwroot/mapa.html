@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cargando Mapa — NexBusiness</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+  <style>
+    /* Estilos específicos del mapa público */
+    .catalog-wrapper { display: flex; height: calc(100vh - 70px); background: #F8FAFC; }
+    .sidebar-list { width: 380px; background: white; border-right: 1px solid var(--border); display: flex; flex-direction: column; }
+    .list-header { padding: 1.5rem; border-bottom: 1px solid var(--border); }
+    .scroll-list { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 1rem; }
+    .map-area { flex: 1; position: relative; }
+    #public-map { width: 100%; height: 100%; }
+
+    .negocio-item { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: var(--transition); }
+    .negocio-item:hover { border-color: var(--primary); box-shadow: var(--shadow); }
+    .ni-cat { font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom: 0.25rem; }
+    .ni-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+    .ni-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.5; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .ni-footer { display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: var(--dark); font-weight: 500; }
+
+    /* Modal emergente del negocio (con IA Chat en un futuro) */
+    .business-flyout {
+      position: absolute; top: 0; left: -100%; width: 400px; height: 100%;
+      background: white; z-index: 10; border-right: 1px solid var(--border);
+      box-shadow: var(--shadow-lg); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column;
+    }
+    .business-flyout.active { left: 0; }
+    .flyout-cover { height: 140px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); position: relative; }
+    .btn-close-flyout { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.2); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; border: none; }
+    .flyout-avatar { width: 80px; height: 80px; border-radius: 16px; background: white; box-shadow: var(--shadow); border: 2px solid white; display: flex; align-items: center; justify-content: center; font-size: 2rem; position: absolute; bottom: -40px; left: 1.5rem; }
+    .flyout-info { padding: 3rem 1.5rem 1.5rem; }
+    .flyout-details { font-size: 0.9rem; color: var(--gray); display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem 0; }
+    .flyout-details span { display: flex; align-items: flex-start; gap: 0.5rem; }
+    .flyout-details svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--primary); }
+    .btn-chat { width: 100%; margin-top: auto; border-radius: 0 !important; height: 60px; font-size: 1.05rem !important; }
+
+    @media(max-width: 768px) {
+      .catalog-wrapper { flex-direction: column; }
+      .sidebar-list { width: 100%; height: 50%; border-right: none; border-bottom: 1px solid var(--border); }
+      .business-flyout { width: 100%; left: 0; top: 100%; transition: top 0.3s ease; }
+      .business-flyout.active { top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" style="position:static;">
+  <div class="navbar-inner">
+    <a href="/index.html" class="navbar-logo">
+      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+      NexBusiness
+    </a>
+    <div class="navbar-links" id="dynamic-nav">
+      <!-- Se llena por JS -->
+    </div>
+  </div>
+</nav>
+
+<div class="catalog-wrapper">
+  <!-- LISTA LATERAL -->
+  <div class="sidebar-list">
+    <div class="list-header">
+      <h2 style="font-size:1.2rem; font-weight:800; margin-bottom: 1rem;">Explorar Negocios</h2>
+      <div class="search-bar" style="width:100%; max-width:100%;">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar por nombre o categoría..." oninput="filtrarLocal()">
+      </div>
+    </div>
+    <div class="scroll-list" id="businesses-list">
+      <div style="text-align:center; padding: 2rem; color: var(--gray);">Buscando en tu zona...</div>
+    </div>
+  </div>
+
+  <!-- ZONA PRINCIPAL (MAPA GIGANTE + FLYOUT) -->
+  <div class="map-area">
+    <div id="public-map"></div>
+
+    <!-- Pestaña flotante de detalle del negocio -->
+    <div class="business-flyout" id="flyout">
+      <div class="flyout-cover">
+        <button class="btn-close-flyout" onclick="closeFlyout()">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="flyout-avatar" id="fl-avatar">B</div>
+      </div>
+      <div class="flyout-info" style="flex:1; overflow-y:auto;">
+        <div id="fl-cat" class="ni-cat">Categoría</div>
+        <h2 id="fl-title" style="font-size: 1.5rem; font-weight:800; color:var(--dark); margin-bottom: 0.5rem;">Nombre Negocio</h2>
+        <p id="fl-desc" style="color:var(--gray); line-height: 1.6; font-size: 0.95rem;">Descripción detallada del negocio aquí...</p>
+        
+        <div class="flyout-details">
+          <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <span id="fl-address">Dirección</span></span>
+          <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span id="fl-hours">Horario</span></span>
+          <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span id="fl-phone">Teléfono</span></span>
+        </div>
+      </div>
+      
+      <!-- Lógica chatbot futura aquí -->
+      <button class="btn btn-primary btn-chat" id="btn-open-chat" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Hablar con la IA del negocio
+      </button>
+
+      <!-- Chat UI interna (Oculta por defecto) -->
+      <div id="chat-ui" style="display:none; flex-direction:column; position:absolute; inset:0; background:white; z-index:20;">
+        <div class="chat-header" style="background:var(--dark); color:white; padding:1rem; display:flex; align-items:center; gap:1rem;">
+          <button class="btn-icon" onclick="closeChat()" style="color:white; padding:0;">
+             <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          </button>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <div class="online-dot"></div>
+            <div>
+              <div style="font-weight:700; font-size:0.95rem;">Asistente Inteligente</div>
+              <div style="font-size:0.75rem; color:rgba(255,255,255,0.7);" id="chat-business-name">De este negocio</div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="chat-messages" class="chat-messages" style="flex:1; overflow-y:auto; padding:1rem; display:flex; flex-direction:column; gap:1rem; background:#F8FAFC;">
+           <div class="msg bot">
+             <div class="msg-avatar">IA</div>
+             <div>
+               <div class="msg-bubble">¡Hola! Soy el asistente virtual de este negocio. ¿En qué te puedo ayudar hoy?</div>
+               <div class="msg-time">Automático</div>
+             </div>
+           </div>
+        </div>
+
+        <div class="chat-input-area" style="padding:1rem; border-top:1px solid var(--border); background:white;">
+           <input type="text" id="chat-input" placeholder="Pregunta sobre horarios, precios..." onkeypress="handleEnter(event)">
+           <button class="btn btn-primary" id="btn-send" onclick="sendMsg()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZARizbh6wB5GWcC3ykwU33Hzb_dcgS8U&libraries=places"></script>
+<script src="/js/app.js"></script>
+<script>
+  let map;
+  let markers = [];
+  let todosNegocios = [];
+  let activeBusinessId = null;
+  let activeChatSessionId = null;
+
+  // Configurar NAVBAR según inicio de sesión
+  document.getElementById('dynamic-nav').innerHTML = getToken() 
+    ? `<a href="/dashboard/index.html" class="btn btn-ghost" style="padding: 0.5rem 1rem;">Mi Dashboard</a>`
+    : `<a href="/login.html" class="btn btn-ghost">Iniciar Sesión</a><a href="/register.html" class="btn btn-primary" style="margin-left:1rem;">Soy Empresa</a>`;
+
+  // Configurar NAVBAR según inicio de sesión
+  document.getElementById('dynamic-nav').innerHTML = getToken() 
+    ? `<a href="/dashboard/index.html" class="btn btn-ghost" style="padding: 0.5rem 1rem;">Mi Dashboard</a>`
+    : `<a href="/login.html" class="btn btn-ghost">Iniciar Sesión</a><a href="/register.html" class="btn btn-primary" style="margin-left:1rem;">Soy Empresa</a>`;
+
+  // MAPA Y DATOS
+  async function initCatalog() {
+    // 1. Inicializar mapa
+    map = new google.maps.Map(document.getElementById("public-map"), {
+      center: { lat: 18.88, lng: -70.2 }, // República Dominicana
+      zoom: 8,
+      styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
+    });
+
+    // 2. Traer Negocios
+    try {
+      todosNegocios = await apiFetch('/negocios');
+      renderList(todosNegocios);
+      renderMarkers(todosNegocios);
+      
+      // Ajustar vista del mapa para que quepan todos los marcadores
+      if(todosNegocios.length > 0) {
+        const bounds = new google.maps.LatLngBounds();
+        let addedCount = 0;
+        todosNegocios.forEach(n => {
+          if (n.latitud && n.longitud) {
+             bounds.extend(new google.maps.LatLng(n.latitud, n.longitud));
+             addedCount++;
+          }
+        });
+        if (addedCount > 0) {
+          map.fitBounds(bounds);
+        }
+      }
+    } catch (e) {
+      document.getElementById('businesses-list').innerHTML = `<p style="text-align:center;color:red;">Error cargando directorio.</p>`;
+    }
+  }
+
+  function renderList(list) {
+    const listEl = document.getElementById('businesses-list');
+    if (list.length === 0) {
+      listEl.innerHTML = `<div style="text-align:center; padding: 2rem; color: var(--gray);">No se encontraron negocios con ese filtro.</div>`;
+      return;
+    }
+
+    listEl.innerHTML = list.map(n => `
+      <div class="negocio-item" onclick="openFlyout(${n.id})">
+        <div class="ni-cat">${n.categoria || 'Local'}</div>
+        <div class="ni-title">${n.nombre}</div>
+        <div class="ni-desc">${n.descripcion || 'Sin descripción disponible.'}</div>
+        <div class="ni-footer">
+          <span>📍 ${n.direccion ? n.direccion.substring(0,25)+'...' : 'Consultar dirección'}</span>
+          <span style="color:var(--primary)">Ver Perfil →</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderMarkers(list) {
+    markers.forEach(m => m.setMap(null));
+    markers = [];
+
+    list.forEach(n => {
+      if(n.latitud && n.longitud) {
+        const marker = new google.maps.Marker({
+          position: { lat: n.latitud, lng: n.longitud },
+          map,
+          title: n.nombre,
+          animation: google.maps.Animation.DROP,
+        });
+        marker.addListener('click', () => {
+          map.panTo(marker.getPosition());
+          map.setZoom(16);
+          openFlyout(n.id);
+        });
+        markers.push(marker);
+      }
+    });
+  }
+
+  function filtrarLocal() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    const filtrados = todosNegocios.filter(n => 
+      n.nombre.toLowerCase().includes(q) || 
+      (n.categoria && n.categoria.toLowerCase().includes(q))
+    );
+    renderList(filtrados);
+    renderMarkers(filtrados);
+  }
+
+  // Lógica del Panel Flotante
+  function openFlyout(id) {
+    const n = todosNegocios.find(x => x.id === id);
+    if(!n) return;
+    
+    activeBusinessId = id;
+    activeChatSessionId = crypto.randomUUID(); // Nueva sesión de chat para mantener historial
+    document.getElementById('chat-business-name').textContent = n.nombre;
+
+    document.getElementById('fl-avatar').textContent = n.nombre.charAt(0);
+    document.getElementById('fl-title').textContent = n.nombre;
+    document.getElementById('fl-cat').textContent = n.categoria || 'Categoría pendiente';
+    document.getElementById('fl-desc').textContent = n.descripcion || 'El dueño no ha dejado una descripción aún.';
+    document.getElementById('fl-address').textContent = n.direccion || 'Ubicación no especificada';
+    document.getElementById('fl-hours').textContent = n.horario || 'Horario no especificado';
+    document.getElementById('fl-phone').textContent = n.telefono || 'Sin teléfono';
+    
+    // Ocultar el chat y borrar historial anterior
+    document.getElementById('chat-ui').style.display = 'none';
+    document.getElementById('chat-messages').innerHTML = `
+      <div class="msg bot">
+        <div class="msg-avatar">IA</div>
+        <div>
+          <div class="msg-bubble">¡Hola! Soy el asistente virtual de ${n.nombre}. ¿En qué te puedo ayudar hoy?</div>
+          <div class="msg-time">Automático</div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('flyout').classList.add('active');
+
+    // Pan mapa si tiene lat/lng
+    if (n.latitud && n.longitud) {
+      if (window.innerWidth > 768) {
+         map.panTo({ lat: n.latitud, lng: n.longitud - 0.015 }); 
+      } else {
+         map.panTo({ lat: n.latitud, lng: n.longitud });
+      }
+      map.setZoom(15);
+    }
+  }
+
+  function closeFlyout() {
+    document.getElementById('flyout').classList.remove('active');
+    closeChat();
+  }
+
+  // --- Lógica de la IA (Chat) ---
+  function openChat() {
+    document.getElementById('chat-ui').style.display = 'flex';
+  }
+
+  function closeChat() {
+    document.getElementById('chat-ui').style.display = 'none';
+  }
+
+  function handleEnter(e) {
+    if (e.key === 'Enter') sendMsg();
+  }
+
+  function addMsgToUI(text, isUser) {
+    const chatMsg = document.getElementById('chat-messages');
+    chatMsg.innerHTML += `
+      <div class="msg ${isUser ? 'user' : 'bot'}">
+        <div class="msg-avatar">${isUser ? 'Tú' : 'IA'}</div>
+        <div>
+          <div class="msg-bubble">${text}</div>
+          <div class="msg-time">Ahora</div>
+        </div>
+      </div>
+    `;
+    setTimeout(() => chatMsg.scrollTop = chatMsg.scrollHeight, 50);
+  }
+
+  function addTypingUI() {
+    const chatMsg = document.getElementById('chat-messages');
+    chatMsg.innerHTML += `
+      <div class="msg bot" id="typing-indicator">
+        <div class="msg-avatar">IA</div>
+        <div>
+          <div class="msg-bubble typing"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    `;
+    setTimeout(() => chatMsg.scrollTop = chatMsg.scrollHeight, 50);
+  }
+
+  function removeTypingUI() {
+    const el = document.getElementById('typing-indicator');
+    if (el) el.remove();
+  }
+
+  async function sendMsg() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg || !activeBusinessId || !activeChatSessionId) return;
+
+    input.value = '';
+    input.disabled = true;
+    document.getElementById('btn-send').disabled = true;
+
+    // Pintar msg del usario
+    addMsgToUI(msg, true);
+    // Pintar los puntitos de IA pensando
+    addTypingUI();
+
+    try {
+      const res = await apiFetch(`/chat/negocio/${activeBusinessId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mensaje: msg, sessionId: activeChatSessionId })
+      });
+
+      removeTypingUI();
+      if (res && res.respuesta) {
+        // Simple MD parser
+        let cleanText = res.respuesta.replace(/\n/g, '<br>');
+        cleanText = cleanText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        addMsgToUI(cleanText, false);
+      } else {
+        addMsgToUI("No recibí respuesta de la IA. Inténtalo de nuevo.", false);
+      }
+    } catch (err) {
+      removeTypingUI();
+      addMsgToUI("Tuve un problema de conexión al intentar responder. " + err.message, false);
+    } finally {
+      input.disabled = false;
+      document.getElementById('btn-send').disabled = false;
+      input.focus();
+    }
+  }
+
+  window.addEventListener('load', initCatalog);
+</script>
+</body>
+</html>

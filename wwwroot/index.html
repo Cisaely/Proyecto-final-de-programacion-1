@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexBusiness — Conecta Talento con Oportunidades</title>
+  <meta name="description" content="NexBusiness conecta empresas con candidatos de forma inteligente. Publica ofertas, encuentra talento y gestiona todo desde un solo lugar."/>
+  <link rel="stylesheet" href="/css/styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/index.html" class="navbar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </div>
+      NexBusiness
+    </a>
+    <div class="navbar-links">
+      <a href="#features">Servicios</a>
+      <a href="#how">Cómo funciona</a>
+      <a href="#roles">Para ti</a>
+      <a href="#testimonials">Testimonios</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="/login.html" class="btn btn-ghost">Iniciar Sesión</a>
+      <a href="/register.html" class="btn btn-primary">Comenzar Gratis</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#features" onclick="closeMobileMenu()">Servicios</a>
+  <a href="#how" onclick="closeMobileMenu()">Cómo funciona</a>
+  <a href="#roles" onclick="closeMobileMenu()">Para ti</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Testimonios</a>
+  <a href="/login.html" class="btn btn-ghost w-full">Iniciar Sesión</a>
+  <a href="/register.html" class="btn btn-primary w-full">Comenzar Gratis</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Plataforma #1 para conectar talento
+      </div>
+      <h1 class="hero-title">
+        Conecta tu empresa con el <span>talento ideal</span>
+      </h1>
+      <p class="hero-desc">
+        NexBusiness es la plataforma inteligente que une empresas y candidatos. Publica ofertas, aplica a empleos y usa IA para crecer más rápido.
+      </p>
+      <div class="hero-actions">
+        <a href="/register.html" class="btn btn-primary btn-lg">
+          Comenzar Gratis
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how" class="btn btn-outline btn-lg">Ver cómo funciona</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">2,500+</div>
+          <div class="hero-stat-label">Empresas activas</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">18,000+</div>
+          <div class="hero-stat-label">Candidatos registrados</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">94%</div>
+          <div class="hero-stat-label">Tasa de éxito</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="Equipo de trabajo NexBusiness" loading="lazy"/>
+      <div class="hero-float-card card1">
+        <div style="width:40px;height:40px;background:#ECFDF5;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" fill="none" stroke="#10B981" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:.85rem">¡Oferta aceptada!</div>
+          <div style="font-size:.75rem;color:#64748B">Hace 2 minutos</div>
+        </div>
+      </div>
+      <div class="hero-float-card card2">
+        <div style="width:40px;height:40px;background:#EFF6FF;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:.85rem">+48 candidatos</div>
+          <div style="font-size:.75rem;color:#64748B">Esta semana</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features" style="background:#F8FAFC;">
+  <div class="section-inner">
+    <div class="section-header-center">
+      <div class="section-tag">✨ Funcionalidades</div>
+      <h2 class="section-title">Todo lo que necesitas en un solo lugar</h2>
+      <p class="section-desc">Herramientas potentes diseñadas para empresas modernas y candidatos ambiciosos.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#EFF6FF;">
+          <svg fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="feature-title">Mapa Interactivo</div>
+        <p class="feature-desc">Encuentra empresas y oportunidades en tu zona con Google Maps integrado.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#F0FDF4;">
+          <svg fill="none" stroke="#10B981" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="feature-title">Chat con IA</div>
+        <p class="feature-desc">Asistente inteligente powered by Google Gemini para guiarte en cada paso.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#FFF7ED;">
+          <svg fill="none" stroke="#F59E0B" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="feature-title">Dashboard Completo</div>
+        <p class="feature-desc">Métricas, gráficos y actividad en tiempo real para tomar mejores decisiones.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#F5F3FF;">
+          <svg fill="none" stroke="#8B5CF6" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <div class="feature-title">Gestión de Ofertas</div>
+        <p class="feature-desc">CRUD completo para publicar, editar y gestionar todas tus ofertas laborales.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#FFF1F2;">
+          <svg fill="none" stroke="#EC4899" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="feature-title">Perfiles Profesionales</div>
+        <p class="feature-desc">Perfiles completos para empresas y candidatos que destacan sus fortalezas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#ECFDF5;">
+          <svg fill="none" stroke="#10B981" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="feature-title">Postulaciones en 1 clic</div>
+        <p class="feature-desc">Aplica a ofertas al instante y da seguimiento al estado de cada postulación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="section-inner">
+    <div class="section-header-center">
+      <div class="section-tag">🚀 Proceso simple</div>
+      <h2 class="section-title">Empieza en 3 pasos</h2>
+      <p class="section-desc">Sin complicaciones. Regístrate, configura tu perfil y empieza a conectar.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-number">01</div>
+        <h3 class="how-title">Elige tu perfil</h3>
+        <p class="how-desc">¿Eres una empresa buscando talento, o un candidato buscando empleo? Regístrate según tu rol en menos de 2 minutos.</p>
+      </div>
+      <div class="how-card" style="background:linear-gradient(135deg,#EFF6FF,#white);">
+        <div class="how-number">02</div>
+        <h3 class="how-title">Configura tu información</h3>
+        <p class="how-desc">Completa tu perfil con tu información, habilidades o descripción de empresa. Cuanto más completo, mejores resultados.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-number">03</div>
+        <h3 class="how-title">Conecta y crece</h3>
+        <p class="how-desc">Empresas publican ofertas, candidatos aplican. El sistema hace el match. Simple así.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="section" id="roles" style="background:#F8FAFC;">
+  <div class="section-inner">
+    <div class="section-header-center">
+      <div class="section-tag">👥 Para todos</div>
+      <h2 class="section-title">Diseñado para tu necesidad</h2>
+      <p class="section-desc">Tanto si tienes un negocio como si buscas los mejores servicios de tu ciudad.</p>
+    </div>
+    <div class="roles-grid">
+      <div class="role-card empresa">
+        <div style="font-size:2.5rem;margin-bottom:.75rem">🏢</div>
+        <h3 class="role-title" style="color:#1D4ED8;">Para Negocios Locales</h3>
+        <p class="role-desc">Digitaliza tu negocio, gestiona tus servicios y gana visibilidad en línea con Google Maps y asistencia automatizada.</p>
+        <ul class="role-features">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Perfil de negocio digital y personalizable</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Catálogo de servicios siempre actualizado</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Geolocalización oficial mediante Google Maps</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Chatbot de Inteligencia Artificial propio</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Panel de métricas y gestión</li>
+        </ul>
+        <a href="/register.html" class="btn btn-primary">Registrar mi negocio</a>
+      </div>
+      <div class="role-card buscador">
+        <div style="font-size:2.5rem;margin-bottom:.75rem">🔎</div>
+        <h3 class="role-title" style="color:#059669;">Para Clientes y Usuarios</h3>
+        <p class="role-desc">Explora el mejor mapa local de servicios. Consigue respuestas instantáneas usando IA especializada y contacta de inmediato.</p>
+        <ul class="role-features">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Ver negocios geolocalizados cerca de ti</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Conversar con el Chatbot del negocio 24/7</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Filtrar por categorías que necesites</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Contacto instantáneo (WhatsApp, Email)</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Es 100% libre de registro.</li>
+        </ul>
+        <a href="#como" class="btn btn-success">Cargar Mapa Abierto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="section-inner">
+    <div class="section-header-center">
+      <div class="section-tag">⭐ Testimonios</div>
+      <h2 class="section-title">Lo que dicen nuestros usuarios</h2>
+      <p class="section-desc">Miles de empresas y candidatos ya confían en NexBusiness.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/>
+        </div>
+        <p class="testimonial-text">"Encontré a mi desarrollador ideal en menos de una semana. El sistema de postulaciones es increíblemente fácil de manejar."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#2563EB,#1D4ED8)">M</div>
+          <div><div class="author-name">María González</div><div class="author-role">CEO · Tech Solutions</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/>
+        </div>
+        <p class="testimonial-text">"El chat IA me ayudó a preparar mi CV y mis respuestas de entrevista. Conseguí trabajo en 3 semanas. ¡Simplemente increíble!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#10B981,#059669)">C</div>
+          <div><div class="author-name">Carlos Ramírez</div><div class="author-role">Desarrollador Web</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/><svg viewBox="0 0 24 24"/>
+        </div>
+        <p class="testimonial-text">"El mapa interactivo nos ha dado visibilidad que no teníamos. Los candidatos nos encuentran y aplican directamente."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED)">A</div>
+          <div><div class="author-name">Ana Martínez</div><div class="author-role">RH · Creativa Studio</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="max-width:700px;margin:0 auto;">
+    <h2>¿Listo para dar el siguiente paso?</h2>
+    <p>Únete a más de 20,000 personas que ya conectaron a través de NexBusiness. Gratis para empezar.</p>
+    <div class="cta-btns">
+      <a href="/register.html?tipo=empresa" class="btn btn-white btn-lg">Soy una Empresa</a>
+      <a href="/register.html?tipo=buscador" class="btn btn-outline-white btn-lg">Busco Empleo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          </div>
+          NexBusiness
+        </div>
+        <p style="font-size:.85rem;line-height:1.7;">La plataforma inteligente que conecta empresas y talento en un solo lugar.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#features">Funcionalidades</a></li>
+          <li><a href="#how">Cómo funciona</a></li>
+          <li><a href="#roles">Para empresas</a></li>
+          <li><a href="#roles">Para candidatos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NexBusiness. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    document.querySelector('.navbar').style.boxShadow =
+      window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
+  });
+
+  // Redirect if already logged in
+  if (localStorage.getItem('nb_token')) {
+    const tipo = localStorage.getItem('nb_tipo');
+    const dest = tipo === 'empresa' ? '/empresa/index.html' : '/buscador/index.html';
+    window.location.href = dest;
+  }
+</script>
+</body>
+</html>

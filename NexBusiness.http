@@ -1,0 +1,6 @@
+@NexBusiness_HostAddress = http://localhost:5221
+
+GET {{NexBusiness_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

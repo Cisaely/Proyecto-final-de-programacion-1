@@ -1,0 +1,18 @@
+# Binarios de construccin
+[Bb]in/
+[Oo]bj/
+
+# Bases de datos locales
+*.db
+*.db-shm
+*.db-wal
+nexbusiness.db
+
+# Configuraciones de Visual Studio / IDEs
+.vs/
+.vscode/
+*.user
+
+# Variables de entorno secretas
+appsettings.Development.json
+.env

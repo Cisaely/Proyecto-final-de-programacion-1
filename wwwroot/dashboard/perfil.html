@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Perfil — NexBusiness</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </div>
+      <span>NexBusiness</span>
+    </div>
+
+    <div class="sidebar-user" style="margin: 1rem; background: rgba(255,255,255,0.05);">
+      <div class="sidebar-avatar" id="sidebar-avatar">U</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name" id="sidebar-name">Usuario</div>
+        <div class="sidebar-user-role" id="sidebar-role">Dueño de Negocio</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label">Gestión</div>
+    <nav class="sidebar-nav">
+      <a href="/dashboard/index.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Inicio
+      </a>
+      <a href="/dashboard/mis-negocios.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Mis Negocios
+      </a>
+      <a href="/dashboard/perfil.html" class="sidebar-item active">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        Mi Perfil
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button onclick="logout()" class="sidebar-item" style="width: 100%; text-align: left; background: none; border: none;">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        Cerrar Sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- OVERLAY MOBILE -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <header class="mobile-topbar">
+      <div class="font-bold">NexBusiness</div>
+      <button id="btn-open-sidebar" class="btn-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </header>
+    
+    <header class="topbar">
+      <h2 class="topbar-title">Mi Perfil</h2>
+    </header>
+
+    <div class="page-content" style="max-width: 800px;">
+      <div class="page-header">
+        <h1>Configuración de Cuenta</h1>
+        <p>Actualiza tus datos personales de acceso al sistema.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <form id="perfilForm">
+            <div class="form-group">
+              <label>Nombre Completo</label>
+              <input type="text" id="p-nombre" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Correo Electrónico (Para Iniciar Sesión)</label>
+              <input type="email" id="p-email" class="form-control" required>
+            </div>
+
+            <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+            
+            <h3 style="margin-bottom: 1rem; font-size: 1rem;">Cambiar contraseña</h3>
+            <p style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1.5rem;">Déjalo en blanco si no deseas cambiarla.</p>
+
+            <div class="form-group">
+              <label>Nueva Contraseña</label>
+              <input type="password" id="p-password" class="form-control" placeholder="••••••••">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg mt-4" id="btn-save">
+              Guardar Cambios
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="page-header" style="margin-top: 3rem;">
+        <h2>Mis Negocios Administrados</h2>
+        <p>Acceso rápido a las vitrinas de tus comercios locales.</p>
+      </div>
+      
+      <div class="ofertas-grid" id="grid-perfil-negocios">
+        <div style="text-align:center; padding: 2rem; color:var(--gray); grid-column: 1/-1;">Cargando tus negocios...</div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (requireAuth()) {
+    async function loadProfile() {
+      try {
+        const user = await apiFetch('/auth/perfil');
+        document.getElementById('p-nombre').value = user.nombre;
+        document.getElementById('p-email').value = user.email;
+      } catch (err) {
+        showToast('Error al cargar perfil: ' + err.message, 'error');
+      }
+    }
+
+    async function loadNegociosPerfil() {
+      try {
+        const negocios = await apiFetch('/negocios/mis-negocios');
+        const grid = document.getElementById('grid-perfil-negocios');
+
+        if(negocios.length === 0) {
+          grid.innerHTML = `<div style="grid-column: 1/-1; padding:2rem; background:white; border-radius:12px; border:1px solid var(--border); text-align:center;">No tienes negocios aún. <a href="/dashboard/mis-negocios.html" class="text-primary font-bold">Crear uno</a></div>`;
+          return;
+        }
+
+        grid.innerHTML = negocios.map(n => `
+          <div class="oferta-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div class="oferta-company" style="margin-bottom:0.5rem;">
+                <div class="company-logo">${n.nombre.charAt(0)}</div>
+                <div>
+                  <h3 class="oferta-title" style="margin-bottom:0.25rem">${n.nombre}</h3>
+                  <span class="badge badge-primary">${n.categoria}</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem; display:flex; gap:0.5rem;">
+              <a href="/dashboard/mis-negocios.html" class="btn btn-sm btn-outline text-dark" style="flex:1; text-align:center;">Gestionar Datos</a>
+              <a href="/dashboard/servicios.html" class="btn btn-sm btn-primary" style="flex:1; text-align:center;">Ver Servicios</a>
+            </div>
+          </div>
+        `).join('');
+      } catch(e) { }
+    }
+
+    document.getElementById('perfilForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('btn-save');
+      
+      const payload = {
+        nombre: document.getElementById('p-nombre').value,
+        email: document.getElementById('p-email').value,
+        password: document.getElementById('p-password').value || null
+      };
+
+      try {
+        btn.disabled = true;
+        btn.textContent = 'Guardando...';
+
+        const res = await apiFetch('/auth/perfil', {
+          method: 'PUT',
+          body: JSON.stringify(payload)
+        });
+
+        // Actualizar datos de sesión en front
+        localStorage.setItem('nb_nombre', res.nombre);
+        populateSidebarUser();
+        
+        showToast('Perfil actualizado correctamente', 'success');
+        document.getElementById('p-password').value = '';
+      } catch (err) {
+        showToast(err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Guardar Cambios';
+      }
+    });
+
+    loadProfile();
+    loadNegociosPerfil();
+  }
+</script>
+</body>
+</html>

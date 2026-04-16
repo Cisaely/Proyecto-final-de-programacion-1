@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — NexBusiness</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </div>
+      <span>NexBusiness</span>
+    </div>
+
+    <div class="sidebar-user" style="margin: 1rem; background: rgba(255,255,255,0.05);">
+      <div class="sidebar-avatar" id="sidebar-avatar">U</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name" id="sidebar-name">Usuario</div>
+        <div class="sidebar-user-role" id="sidebar-role">Dueño de Negocio</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label">Gestión</div>
+    <nav class="sidebar-nav">
+      <a href="/dashboard/index.html" class="sidebar-item active">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Inicio
+      </a>
+      <a href="/dashboard/mis-negocios.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Mis Negocios
+      </a>
+      <a href="/dashboard/perfil.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        Mi Perfil
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button onclick="logout()" class="sidebar-item" style="width: 100%; text-align: left; background: none; border: none;">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        Cerrar Sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- OVERLAY MOBILE -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <header class="mobile-topbar">
+      <div class="font-bold">NexBusiness</div>
+      <button id="btn-open-sidebar" class="btn-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </header>
+    
+    <header class="topbar">
+      <h2 class="topbar-title">Resumen de Actividad</h2>
+      <div class="topbar-actions">
+        <a href="/mapa.html" class="btn btn-outline btn-sm">Ir al Mapa Público</a>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <div class="page-header">
+        <h1 id="welcome-msg">Hola, cargando...</h1>
+        <p>Aquí tienes un resumen de cómo le está yendo a tus negocios locales en NexBusiness.</p>
+      </div>
+
+      <!-- ESTADÍSTICAS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#ECFDF5;color:var(--success)">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-negocios">-</div>
+            <div class="stat-label">Mis Negocios Activos</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:var(--primary-light);color:var(--primary)">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-chats">-</div>
+            <div class="stat-label">Conversaciones con Clientes</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#FFF7ED;color:var(--warning)">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-mensajes-ia">-</div>
+            <div class="stat-label">Mensajes resueltos por IA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN RECIENTE -->
+      <div class="card">
+        <div class="card-header"><h3 class="card-title">Mis Negocios Recientes</h3></div>
+        <div class="table-container">
+          <table id="table-negocios">
+            <thead>
+              <tr>
+                <th>Nombre del Negocio</th>
+                <th>Categoría</th>
+                <th>Dirección</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align:center;">Cargando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (requireAuth()) {
+    document.getElementById('welcome-msg').textContent = `Hola, ${getNombre()}`;
+
+    // Cargar estadisticas reales
+    async function loadStats() {
+      try {
+        const stats = await apiFetch('/negocios/estadisticas');
+        document.getElementById('stat-negocios').textContent = stats.negocios;
+        document.getElementById('stat-chats').textContent = stats.conversaciones;
+        document.getElementById('stat-mensajes-ia').textContent = stats.mensajesAsistente;
+      } catch (err) {
+        console.error('Error cargando estadísticas', err);
+      }
+    }
+
+    // Cargar negocios
+    async function loadNegocios() {
+      try {
+        const negocios = await apiFetch('/negocios/mis-negocios');
+        const tbody = document.querySelector('#table-negocios tbody');
+        
+        if (negocios.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">No tienes negocios registrados aún. <a href="/dashboard/mis-negocios.html" class="text-primary font-bold">Crear el primero</a></td></tr>`;
+          return;
+        }
+
+        // Mostrar solo los últimos 5
+        const recientes = negocios.slice(-5).reverse();
+
+        tbody.innerHTML = recientes.map(n => `
+          <tr>
+            <td><strong>${n.nombre}</strong></td>
+            <td><span class="badge badge-primary">${n.categoria || 'Sin categoría'}</span></td>
+            <td>${n.direccion || 'Falta dirección'}</td>
+            <td>
+              <a href="/dashboard/mis-negocios.html?id=${n.id}" class="btn btn-sm btn-outline">Gestionar</a>
+            </td>
+          </tr>
+        `).join('');
+
+      } catch (err) {
+        showToast('Error cargando negocios: ' + err.message, 'error');
+      }
+    }
+
+    loadStats();
+    loadNegocios();
+  }
+</script>
+</body>
+</html>

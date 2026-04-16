@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mis Negocios — NexBusiness</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </div>
+      <span>NexBusiness</span>
+    </div>
+
+    <div class="sidebar-user" style="margin: 1rem; background: rgba(255,255,255,0.05);">
+      <div class="sidebar-avatar" id="sidebar-avatar">U</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name" id="sidebar-name">Usuario</div>
+        <div class="sidebar-user-role" id="sidebar-role">Dueño de Negocio</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label">Gestión</div>
+    <nav class="sidebar-nav">
+      <a href="/dashboard/index.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Inicio
+      </a>
+      <a href="/dashboard/mis-negocios.html" class="sidebar-item active">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Mis Negocios
+      </a>
+      <a href="/dashboard/perfil.html" class="sidebar-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        Mi Perfil
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button onclick="logout()" class="sidebar-item" style="width: 100%; text-align: left; background: none; border: none;">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        Cerrar Sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- OVERLAY MOBILE -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <header class="mobile-topbar">
+      <div class="font-bold">NexBusiness</div>
+      <button id="btn-open-sidebar" class="btn-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </header>
+    
+    <header class="topbar">
+      <h2 class="topbar-title">Mis Negocios</h2>
+      <div class="topbar-actions">
+        <button class="btn btn-primary" onclick="openModalRegistro()">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Registrar Negocio
+        </button>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <div class="page-header">
+        <h1>Directorio Privado</h1>
+        <p>Administra la información de tus negocios. Esto es lo que verán los clientes en la plataforma.</p>
+      </div>
+
+      <!-- GRID DE NEGOCIOS -->
+      <div class="ofertas-grid" id="grid-negocios">
+        <div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: var(--gray);">
+          Cargando negocios...
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL REGISTRO NEGOCIO -->
+<div class="modal-overlay" id="modal-negocio" style="display:none;">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 id="modal-title">Registrar Nuevo Negocio</h3>
+      <button class="btn-icon" onclick="closeModal('modal-negocio')">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="formNegocio">
+        <input type="hidden" id="negocio-id">
+        <div class="form-group">
+          <label>Nombre Comercial *</label>
+          <input type="text" id="n-nombre" class="form-control" placeholder="Ej. El Buen Sabor" required>
+        </div>
+        <div class="form-group">
+          <label>Categoría *</label>
+          <select id="n-categoria" class="form-control" required>
+            <option value="">Selecciona una opción...</option>
+            <option value="Restaurante">Restaurante / Comida</option>
+            <option value="Servicios Profesionales">Servicios Profesionales</option>
+            <option value="Salud y Belleza">Salud y Belleza</option>
+            <option value="Comercio">Tienda / Comercio</option>
+            <option value="Educación">Educación</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Dirección</label>
+          <input type="text" id="n-direccion" class="form-control" placeholder="Calle Central #123, Ciudad">
+        </div>
+        <div class="two-col" style="gap:1rem; margin-bottom: 1.25rem;">
+          <div class="form-group" style="margin:0">
+            <label>Latitud (Opcional - Para Mapa)</label>
+            <input type="number" step="any" id="n-lat" class="form-control" placeholder="18.88">
+          </div>
+          <div class="form-group" style="margin:0">
+            <label>Longitud (Opcional - Para Mapa)</label>
+            <input type="number" step="any" id="n-lng" class="form-control" placeholder="-70.2">
+          </div>
+        </div>
+        <div class="two-col" style="gap:1rem; margin-bottom: 1.25rem;">
+          <div class="form-group" style="margin:0">
+            <label>Teléfono</label>
+            <input type="text" id="n-telefono" class="form-control" placeholder="555-1234">
+          </div>
+          <div class="form-group" style="margin:0">
+            <label>Horario</label>
+            <input type="text" id="n-horario" class="form-control" placeholder="L-V 9am a 6pm">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Acerca de tu negocio</label>
+          <textarea id="n-descripcion" rows="3" class="form-control" placeholder="¿Qué hace especial a tu negocio?"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-negocio')">Cancelar</button>
+      <button class="btn btn-primary" id="btn-save" onclick="guardarNegocio()">Guardar Negocio</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (requireAuth()) {
+    let currentNegocios = [];
+
+    async function loadGrid() {
+      try {
+        currentNegocios = await apiFetch('/negocios/mis-negocios');
+        const grid = document.getElementById('grid-negocios');
+
+        if (currentNegocios.length === 0) {
+          grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 4rem; background:white; border-radius:16px; border:1px dashed var(--border);">
+            <div style="font-size:3rem; margin-bottom:1rem;">🏪</div>
+            <h3>Aún no has registrado ningún negocio</h3>
+            <p style="color:var(--gray); margin-bottom:1.5rem;">Crea el primero para aparecer en el mapa</p>
+            <button class="btn btn-primary" onclick="openModalRegistro()">Añadir Negocio Ahora</button>
+          </div>`;
+          return;
+        }
+
+        grid.innerHTML = currentNegocios.map(n => `
+          <div class="oferta-card">
+            <div class="oferta-company">
+              <div class="company-logo">${n.nombre.charAt(0)}</div>
+              <div>
+                <h3 class="oferta-title">${n.nombre}</h3>
+                <span class="badge badge-primary">${n.categoria}</span>
+              </div>
+            </div>
+            <p class="oferta-desc">${n.descripcion || 'Sin descripción'}</p>
+            <div class="oferta-info" style="margin-bottom:1rem;">
+              <span>📍 ${n.direccion || 'Sin dirección'}</span>
+              <span>📞 ${n.telefono || 'Sin teléfono'}</span>
+            </div>
+            <div class="oferta-actions">
+              <button class="btn btn-sm btn-outline text-dark" onclick="editar(${n.id})">Editar Perfil</button>
+              <button class="btn btn-sm btn-danger" onclick="eliminar(${n.id})">Borrar</button>
+            </div>
+          </div>
+        `).join('');
+
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    window.openModalRegistro = function() {
+      document.getElementById('formNegocio').reset();
+      document.getElementById('negocio-id').value = '';
+      document.getElementById('modal-title').textContent = 'Registrar Nuevo Negocio';
+      openModal('modal-negocio');
+    };
+
+    window.editar = function(id) {
+      const n = currentNegocios.find(x => x.id === id);
+      if(!n) return;
+      document.getElementById('negocio-id').value = n.id;
+      document.getElementById('n-nombre').value = n.nombre;
+      document.getElementById('n-categoria').value = n.categoria;
+      document.getElementById('n-direccion').value = n.direccion;
+      document.getElementById('n-lat').value = n.latitud || '';
+      document.getElementById('n-lng').value = n.longitud || '';
+      document.getElementById('n-telefono').value = n.telefono;
+      document.getElementById('n-horario').value = n.horario;
+      document.getElementById('n-descripcion').value = n.descripcion;
+      
+      document.getElementById('modal-title').textContent = 'Editar Negocio';
+      openModal('modal-negocio');
+    };
+
+    window.guardarNegocio = async function() {
+      const id = document.getElementById('negocio-id').value;
+      const btn = document.getElementById('btn-save');
+      
+      const payload = {
+        nombre: document.getElementById('n-nombre').value,
+        categoria: document.getElementById('n-categoria').value,
+        direccion: document.getElementById('n-direccion').value,
+        latitud: parseFloat(document.getElementById('n-lat').value) || null,
+        longitud: parseFloat(document.getElementById('n-lng').value) || null,
+        telefono: document.getElementById('n-telefono').value,
+        horario: document.getElementById('n-horario').value,
+        descripcion: document.getElementById('n-descripcion').value
+      };
+
+      if (!payload.nombre || !payload.categoria) {
+        return showToast('Nombre y Categoría son obligatorios', 'error');
+      }
+
+      try {
+        btn.disabled = true;
+        btn.textContent = 'Guardando...';
+
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `/negocios/${id}` : '/negocios';
+
+        await apiFetch(url, {
+          method,
+          body: JSON.stringify(payload)
+        });
+
+        showToast(id ? 'Negocio actualizado' : 'Negocio creado con éxito', 'success');
+        closeModal('modal-negocio');
+        loadGrid();
+      } catch (err) {
+        showToast(err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Guardar Negocio';
+      }
+    };
+
+    window.eliminar = async function(id) {
+      if(!confirm('¿Estás seguro de que deseas eliminar este negocio y todos sus servicios permanentemente?')) return;
+      try {
+        await apiFetch(`/negocios/${id}`, { method: 'DELETE' });
+        showToast('Negocio eliminado', 'success');
+        loadGrid();
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    loadGrid();
+  }
+</script>
+</body>
+</html>
